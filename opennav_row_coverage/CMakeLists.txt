@@ -52,7 +52,8 @@ ament_target_dependencies(${library_name}
 #and grab the vendored TINYXML2_LIBRARY too
 target_link_libraries(${library_name}
     Fields2Cover
-    tinyxml2::tinyxml2)
+    tinyxml2::tinyxml2
+    gdal)
 
 add_executable(${executable_name}
   src/main.cpp
@@ -76,16 +77,16 @@ install(TARGETS ${executable_name}
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 
-# install(DIRECTORY include/
-#   DESTINATION include/
-# )
+install(DIRECTORY include/
+  DESTINATION include/
+)
 
-# if(BUILD_TESTING)
-#   find_package(ament_lint_auto REQUIRED)
-#   find_package(ament_cmake_gtest REQUIRED)
-#   ament_lint_auto_find_test_dependencies()
-#   add_subdirectory(test)
-# endif()
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  find_package(ament_cmake_gtest REQUIRED)
+  ament_lint_auto_find_test_dependencies()
+  add_subdirectory(test)
+endif()
 
 ament_export_include_directories(include)
 ament_export_libraries(${library_name})
