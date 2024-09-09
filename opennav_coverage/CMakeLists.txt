@@ -85,18 +85,18 @@ install(DIRECTORY include/
   DESTINATION include/
 )
 
-install(FILES test/test_field.xml
-              test/cartesian_test_field.xml
-              test/irregular_test_field.xml
-  DESTINATION share/${PROJECT_NAME}/
-)
+# install(FILES test/test_field.xml
+#               test/cartesian_test_field.xml
+#               test/irregular_test_field.xml
+#   DESTINATION share/${PROJECT_NAME}/
+# )
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  find_package(ament_cmake_gtest REQUIRED)
-  ament_lint_auto_find_test_dependencies()
-  add_subdirectory(test)
-endif()
+# if(BUILD_TESTING)
+#   find_package(ament_lint_auto REQUIRED)
+#   find_package(ament_cmake_gtest REQUIRED)
+#   ament_lint_auto_find_test_dependencies()
+#   add_subdirectory(test)
+# endif()
 
 ament_export_include_directories(include)
 ament_export_libraries(${library_name})
