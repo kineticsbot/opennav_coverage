@@ -52,7 +52,8 @@ ament_target_dependencies(${library_name}
 #and grab the vendored TINYXML2_LIBRARY too
 target_link_libraries(${library_name}
     Fields2Cover
-    tinyxml2::tinyxml2)
+    tinyxml2::tinyxml2
+    gdal)
 
 add_executable(${executable_name}
   src/main.cpp

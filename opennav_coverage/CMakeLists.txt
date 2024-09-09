@@ -57,7 +57,10 @@ ament_target_dependencies(${library_name}
   ${dependencies}
 )
 
-target_link_libraries(${library_name} Fields2Cover)
+target_link_libraries(${library_name} 
+  Fields2Cover
+  gdal)
+
 
 add_executable(${executable_name}
   src/main.cpp

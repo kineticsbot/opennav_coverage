@@ -59,7 +59,7 @@ def generate_launch_description():
         arguments=[
             '-entity', 'tb3',
             '-file', sdf,
-            '-x', '5.0', '-y', '5.0', '-z', '0.10',
+            '-x', '0.5', '-y', '10.0', '-z', '0.10',
             '-R', '0.0', '-P', '0.0', '-Y', '0.0'])
 
     # start the visualization
